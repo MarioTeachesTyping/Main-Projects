@@ -1,0 +1,413 @@
+//=====================================//
+//=====================================//
+//== Written By..: AJ                ==//
+//== Date Written: 2/24/24 - 3/10/24 ==//
+//== Purpose.....: Word Search       ==//
+//=====================================//
+//=====================================//
+
+package WordSearch;
+
+import java.io.*;
+
+public class Main 
+{
+	// Variables for rows, columns, number of words,
+	// and max letters for words.
+	final static int ROWS = 20; 
+	final static int COLS = 20;
+	final static int NUMWORDS = 10;
+	final static int MAXLETTERS = 10;
+
+	public static void main(String[] args) 
+	{
+		// Array for words input by user.
+		String[] wordArray = new String[NUMWORDS];
+		// Double array for word search.
+		char[][] paper = new char[ROWS][COLS];
+			
+		// Methods
+		Methods.getTenWords(wordArray);
+		Methods.popPaper(wordArray, paper);
+		Methods.addJunk(paper);
+		Methods.printPaper(paper);
+		Methods.displayWords(wordArray);
+		
+		// This allows the user to print the word search to a text file.
+		String fileName = "c://textFiles//WordSearch.Txt";
+		try 
+		{
+			// The file object is used with PrintWriter to
+			// write the file to the file object.
+			File myFile = new File(fileName);
+			PrintWriter out = new PrintWriter(myFile);
+			
+			// This prints the string methods to the text file.
+			out.print(Methods.printPaperAsString(paper));
+			out.print(Methods.displayWordsAsString(wordArray));
+			out.close();
+			
+			// If PrintWriter succeeds, a message is displayed.
+			System.out.println();
+			System.out.println("Word Search Successfully Printed!");
+		} // end try
+		catch (FileNotFoundException fnf)
+		{
+			// If PrintWriter fails, an error message is displayed.
+			System.out.println();
+			System.out.println("Word Search Unable to Print...");
+		} // end catch
+		
+	} // end of main
+
+} // end of Main
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+package WordSearch;
+
+import java.util.*;
+
+public class Methods
+{
+	public static Scanner input = new Scanner(System.in);
+	
+	// Variables for rows, columns, number of words,
+	// and max letters for words.
+	final static int ROWS = 20;
+	final static int COLS = 20;
+	final static int NUMWORDS = 10;
+	final static int MAXLETTERS = 10;
+	
+	static Random rand = new Random();
+	static boolean isValid;
+	
+    //====================================================//
+	// Purpose: Populates a new paper with entered words. //
+	//====================================================//
+	public static void popPaper(String[] words, char[][] paper) 
+	{
+		
+		int direction;
+		int r = 0, c = 0; // Rows, Columns.
+		boolean isReverse;
+		
+		// Initialize Paper
+		for (int i = 0; i < ROWS; i++)
+		{
+			for (int j = 0; j < COLS; j++)
+			{
+				paper[i][j] = '.';
+			}
+		}
+		
+		// Set direction and check spaces.
+		for (int i = 0; i < words.length; i++)
+		{
+			direction = (int)(Math.random() * 4); // Random number between 0 and 3.
+			isReverse = rand.nextBoolean(); // Either true or false.
+			
+			switch (direction)
+			{
+			case 0: // Vertical
+				r = rand.nextInt(ROWS - words[i].length()); // Subtract by the length to have space down.
+				c = rand.nextInt(COLS);
+				break;
+			case 1: // Horizontal
+				r = rand.nextInt(ROWS);
+				c = rand.nextInt(COLS - words[i].length()); // Subtract to have space right.
+			case 2: // Diagonal Going Down
+				r = rand.nextInt(ROWS - words[i].length()); // Subtract both to have space down and right.
+				c = rand.nextInt(COLS - words[i].length());
+				break;
+			case 3: // Diagonal Going Up
+				r = words[i].length() + (rand.nextInt(ROWS - words[i].length())); // Makes range between the length and amount of rows.
+				c = rand.nextInt(COLS - words[i].length()); // Subtract columns to have space right.
+				break;
+			} // end switch
+			
+			boolean check = isValid(paper, words[i], direction, r, c);
+			
+			// Place words.
+			if (check == true) // If valid, put down the word.
+			{
+				addWord(paper, words[i], direction, isReverse, r, c);
+			}
+			else
+			{
+				i--; // Otherwise, do it again.
+			} // end if else
+			
+		} // end for
+		
+	} // end popArray
+
+  //====================================//
+	// Purpose: Adds a word to the paper. //
+	//====================================//
+	private static void addWord(char[][] paper, String word, int direction, boolean isReverse, int r, int c) 
+	{
+		if (isReverse == true)
+		{
+			placeReverse(paper, word, direction, r, c);
+		}
+		else
+		{
+			placeNormal(paper, word, direction, r, c);
+		}
+		
+	} // end addWord
+
+	//===============================================//
+	// Purpose: Places a word on the paper normally. //
+	//===============================================//
+	private static void placeNormal(char[][] paper, String word, int direction, int r, int c)
+	{
+		for (int i = 0; i < word.length(); i++)
+		{
+			switch (direction)
+			{
+			case 0: // Vertical
+				paper[r + i][c] = word.charAt(i); // charAt returns the char value of index.
+				break;
+			case 1: // Horizontal
+				paper[r][c + i] = word.charAt(i);
+				break;
+			case 2: // Diagonal Going Up
+				paper[r + i][c + i] = word.charAt(i);
+				break;
+			case 3: // Diagonal Going Down
+				paper[r - i][c + i] = word.charAt(i);
+				break;
+			} // end switch
+		} // end for
+		
+	} // end placeNormal
+
+	//=================================================//				
+	// Purpose: Places a word on the paper in reverse. //
+	//=================================================//
+	private static void placeReverse(char[][] paper, String word, int direction, int r, int c) 
+	{
+		StringBuilder temp = new StringBuilder(); // Make temporary string from class StringBuilder.
+		temp.append(word); // Append the current word into temp string.
+		temp.reverse(); // Reverse temp string.
+		
+		for (int i = 0; i < temp.length(); i++) // Place temp string on the paper.
+		{
+			switch (direction)
+			{
+			case 0: // Vertical
+				paper[r + i][c] = temp.charAt(i); // charAt returns the char value of index.
+				break;
+			case 1: // Horizontal
+				paper[r][c + i] = temp.charAt(i);
+				break;
+			case 2: // Diagonal Going Up
+				paper[r + i][c + i] = temp.charAt(i);
+				break;
+			case 3: // Diagonal Going Down
+				paper[r - i][c + i] = temp.charAt(i);
+				break;
+			} // end switch
+		} // end for
+		
+	} // end placeReverse
+
+	
+	//====================================================================//
+	// Purpose: Boolean method that checks if a word fits into the paper. //
+	//====================================================================//
+	private static boolean isValid(char[][] paper, String word, int direction, int r, int c) 
+	{
+		for (int i = 0; i < word.length(); i++)
+		{
+			switch (direction)
+			{
+			case 0: // Vertical
+				if (paper[r + i][c] != '.' && paper[r + i][c] != word.charAt(i)) // Check every row the column occupies.
+				{
+					return false;
+				} // end if
+				break;
+				
+			case 1: // Horizontal
+				if (paper[r][c + i] != '.' && paper[r][c + i] != word.charAt(i)) // Check every column the row occupies.
+				{
+					return false;
+				} // end if
+				break;
+			case 2: // Diagonal Going Down
+				if (paper[r + i][c + i] != '.' && paper[r + i][c + i] != word.charAt(i)) // Check where the word is going.
+				{
+					return false;
+				} // end if
+				break;
+			case 3: // Diagonal Going Up
+				if (paper[r - i][c + i] != '.' && paper[r - i][c + i] != word.charAt(i))
+				{
+					return false;
+				} // end if
+				break;
+				
+			} // end switch
+		} // end for
+		
+		// If everything works out.
+		return true;
+		
+	} // end isValid
+
+	//================================//				
+	// Purpose: Displays word search. //
+	//================================//
+	public static void printPaper(char[][] paper)
+	{
+		for (int i = 0; i < ROWS; i++)
+		{
+			for (int j = 0; j < COLS; j++)
+			{
+				System.out.print(paper[i][j] + " ");
+			} // end j
+			System.out.println();
+		} // end i
+		
+	} // end printPaper
+	
+	//===========================================================//				
+	// Purpose: Fills empty spaces in array with random letters. //
+	//===========================================================//
+	public static void addJunk(char[][] paper)
+	{
+		char c;
+		
+		for (int i = 0; i < ROWS; i++)
+		{
+			for (int j = 0; j < COLS; j++)
+			{
+				c = (char)(rand.nextInt(26) + 'A'); // Picks a random char between A -> Z.
+				
+				if (paper[i][j] == '.')
+				{
+					paper[i][j] = c;
+				} // end if
+				
+			} // end j
+		} // end i
+		
+	}// end popJunk
+	
+	//==============================================//
+	// Purpose: Display the ten user written words. //
+	//==============================================//
+	public static void displayWords(String[] wordArray)
+	{
+		// Sorts words into alphabetical order.
+		Arrays.sort(wordArray);
+		
+		System.out.println();
+		System.out.println("-------------------");
+		System.out.println("-      WORDS      -");
+		System.out.println("-------------------");
+		
+		// Displays the ten user inputted words all in upper case.
+		for (int i = 0; i < wordArray.length; i++)
+		{
+			System.out.println(" " + (i + 1) + ". " + wordArray[i].toUpperCase());
+		}
+		System.out.println("-------------------");
+		
+	} // end of displayWords
+	
+	//====================================================//
+	// Purpose: Get and validate ten words from the user. //
+	//====================================================//
+	public static void getTenWords(String[] wordArray)
+	{
+		System.out.println("---------------------------");
+		System.out.println("- Welcome to Word Search! -");
+		System.out.println("---------------------------");
+		
+		for (int i = 0; i < NUMWORDS; i++)
+	    {
+	        boolean isValid = false;
+	        boolean badString = false;
+
+	        do
+	        {
+	            System.out.print("Enter Word Number " + (i + 1) + ": ");
+	            wordArray[i] = input.nextLine().trim().toUpperCase();
+
+	            // Check if the word is less than 10 letters.
+	            if (wordArray[i].length() > MAXLETTERS)
+	            {
+	                isValid = false;
+	                System.out.println("Word Must be 10 Letters or Less.");
+	            } 
+	            else 
+	            {
+	                isValid = true;  // Assume it's valid unless proven otherwise.
+	            }
+
+	            // Check if the word contains only letters.
+	            if (!wordArray[i].matches("[a-zA-Z]+"))
+	            {
+	                badString = true;
+	                System.out.println("Please Enter a Word that only contains Letters.");
+	            } 
+	            else 
+	            {
+	                badString = false;  // Assume it's valid unless proven otherwise.
+	            }
+
+	        } while (!isValid || badString);
+	    } // end for
+
+	    input.close();
+	    System.out.println("--------------------------");
+	    System.out.println();
+	} // end of getTenWords
+	
+	//=================================================================//
+	// Purpose: Display the word search as a string for the text file. //
+	//=================================================================//
+	public static String printPaperAsString(char[][] paper) 
+	{
+        StringBuilder output = new StringBuilder();
+
+        for (int i = 0; i < ROWS; i++) 
+        {
+            for (int j = 0; j < COLS; j++) 
+            {
+                output.append(paper[i][j] + " ");
+            }
+            output.append("\n");
+        }
+        output.append("\n");
+
+        return output.toString();
+    } // end of printPaperAsString
+
+	//===============================================================//
+	// Purpose: Display the ten words as a string for the text file. //
+	//===============================================================//
+    public static String displayWordsAsString(String[] wordArray) 
+    {
+        StringBuilder output = new StringBuilder();
+
+        output.append("\n");
+        output.append("---------------------------\n");
+        output.append("-          WORDS          -\n");
+        output.append("---------------------------\n");
+
+        for (int i = 0; i < wordArray.length; i++)
+        {
+            output.append(" " + (i + 1) + ". " + wordArray[i].toUpperCase() + "\n");
+        }
+
+        output.append("--------------------------\n");
+
+        return output.toString();
+    } // end of displayWordsAsString
+	
+} // end of Methods
