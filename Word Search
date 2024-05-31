@@ -34,7 +34,7 @@ public class Main
 		Methods.displayWords(wordArray);
 		
 		// This allows the user to print the word search to a text file.
-		String fileName = "c://textFiles//WordSearch.Txt";
+		String fileName = " ";
 		try 
 		{
 			// The file object is used with PrintWriter to
@@ -82,7 +82,7 @@ public class Methods
 	static Random rand = new Random();
 	static boolean isValid;
 	
-    //====================================================//
+        //====================================================//
 	// Purpose: Populates a new paper with entered words. //
 	//====================================================//
 	public static void popPaper(String[] words, char[][] paper) 
@@ -142,7 +142,7 @@ public class Methods
 		
 	} // end popArray
 
-  //====================================//
+        //====================================//
 	// Purpose: Adds a word to the paper. //
 	//====================================//
 	private static void addWord(char[][] paper, String word, int direction, boolean isReverse, int r, int c) 
