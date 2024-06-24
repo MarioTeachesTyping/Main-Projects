@@ -1,0 +1,18 @@
+/*******************************/
+/* Written By..: AJ            */
+/* Date Written: June 23, 2024 */
+/* Purpose.....: Media CSS     */
+/*******************************/
+
+@media screen and (max-width: 1200px)
+{
+    #desktop-nav
+    {
+        display: none; /* if screen size is lower than 1200 pixels the desktop nav disappears */
+    }
+
+    #mobile-nav
+    {
+        display: flex;
+    }
+}

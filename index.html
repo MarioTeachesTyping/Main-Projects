@@ -1,0 +1,248 @@
+<!------------------------------------>
+<!--| Written By..: AJ             |-->
+<!--| Date Written: June 23, 2024  |-->
+<!--| Purpose.....: Portfolio HTML |-->
+<!------------------------------------>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Portfolio </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+    <body>
+        <nav id="desktop-nav">
+            <div class="logo"> Anthony Terry </div>
+            <div> 
+                <ul class="nav-links">
+                    <li><a href="#about"> About </a></li>
+                    <li><a href="#experience"> Experience </a></li>
+                    <li><a href="#projects"> Projects </a></li>
+                    <li><a href="#contact"> Contact </a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="mobile-nav">
+            <div class="logo"> Anthony Terry </div>
+            <div class="mobile-menu">
+                <div class="mobile-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span> <!-- lines of hamburger menu -->
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="#about" onclick="toggleMenu()"> About </a></li>
+                    <li><a href="#experience" onclick="toggleMenu()"> Experience </a></li>
+                    <li><a href="#projects" onclick="toggleMenu()"> Projects </a></li>
+                    <li><a href="#contact" onclick="toggleMenu()"> Contact </a></li>
+                </div>
+            </div>
+        </nav>
+        <section id="profile">
+            <div class="section__pic-container">
+                <img src="./assets/business-pfp.jpg" alt="Anthony Terry PFP">
+            </div>
+            <div class="section__text">
+                <p class="section__text__p1"> Hello I'm </p>
+                <h1 class="title"> Anthony Terry </h1>
+                <p class="section__text__p2"> Computer Science Major </p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">
+                        Download Resume
+                    </button>
+                    <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                        Contact Info
+                    </button>
+                </div>
+                <div id="socials-container">
+                    <img src="./assets/linkedin.png" alt="My LinkedIn Profile" 
+                    class="icon" 
+                    onclick="location.href='https://www.linkedin.com/in/anthony-terry-91a560286/'">
+                    <img src="./assets/github.png" alt="My GitHub Profile" 
+                    class="icon" 
+                    onclick="location.href='https://github.com/MarioTeachesTyping'">
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <p class="section__text__p1"> Get To Know More </p>
+            <h1 class="title"> About Me </h1>
+            <div class="section-container">
+                <div class="section__pic-container">
+                    <img src="./assets/about-me.jpg" alt="Coding Picture" class="about-pic">
+                </div>
+                
+                <div class="about-details-container">
+                    <div class="about-containers">
+                        <div class="details-container">
+                            <img src="./assets/experience.png" alt="Experience Icon" class="icon">
+                            <h3> Experience </h3>
+                            <p> Walgreens <br> Customer Service Associate <br> 2022 </p>
+                        </div>
+                        <div class="details-container">
+                            <img src="./assets/education.png" alt="Education Icon" class="icon">
+                            <h3> Education </h3>
+                            <p> Bachelor of Science in Computer Science 
+                            <br> University of Central Florida <br> Expected 2026 </p>
+                        </div>
+                    </div>
+                    <div class="text-container">
+                        <p> Hi, my name is Anthony Terry. I'm a Computer Science Major 
+                            at the University of Central Florida, and I look forward to 
+                            challenges that will better myself and help me learn. 
+                            I am thrilled about joining the workforce and looking forward 
+                            to all the knowledge I can obtain in the Computer Science field. </p>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/arrow.png" alt="Arrow Icon" class="icon arrow" 
+            onclick="location.href='./#experience'">
+        </section>
+        <section id="experience">
+            <p class="section__text__p1"> Explore My </p>
+            <h1 class="title"> Experience </h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <h2 class="experience-sub-title"> Front-End Development </h2>
+                        <div class="article-container">
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
+                                <div>
+                                    <h3> HTML </h3>
+                                    <p> Intermediate </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
+                                <div>
+                                    <h3> CSS </h3>
+                                    <p> Intermediate </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
+                                <div>
+                                    <h3> JavaScript </h3>
+                                    <p> Basic </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="details-container">
+                        <h2 class="experience-sub-title"> Back-End Development </h2>
+                        <div class="article-container">
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
+                                <div>
+                                    <h3> Python </h3>
+                                    <p> Intermediate </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
+                                <div>
+                                    <h3> Java </h3>
+                                    <p> Experienced </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
+                                <div>
+                                    <h3> C/C++ </h3>
+                                    <p> Intermediate </p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
+                                <div>
+                                    <h3> C# </h3>
+                                    <p> Basic </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/arrow.png" alt="Arrow Icon" class="icon arrow" 
+            onclick="location.href='./#projects'">
+        </section>
+        <section id="projects">
+            <p class="section__text__p1"> Browse My Main </p>
+            <h1 class="title"> Projects </h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/project-1.JPG" alt="Project 1" class="project-img">
+                        </div>
+                        <h2 class="experience-sub-title project-title"> TECH Website </h2>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" 
+                            onclick="location.href='https://github.com/MarioTeachesTyping/Main-Projects/tree/TECH-Website'">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/project-2.png" alt="Project 2" class="project-img">
+                        </div>
+                        <h2 class="experience-sub-title project-title"> Word Search </h2>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" 
+                            onclick="location.href='https://github.com/MarioTeachesTyping/Main-Projects/blob/main/Word%20Search'">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/project-3.png" alt="Project 3" class="project-img">
+                        </div>
+                        <h2 class="experience-sub-title project-title"> Exam Menu </h2>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" 
+                            onclick="location.href='https://github.com/MarioTeachesTyping/Main-Projects/blob/main/Exam%20Menu'">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/arrow.png" alt="Arrow Icon" class="icon arrow" 
+            onclick="location.href='./#contact'">
+        </section>
+        <section id="contact">
+            <p class="section__text__p1"> Get in Touch </p>
+            <h1 class="title"> Contact Me </h1>
+            <div class="contact-info-upper-container">
+                <div class="contact-info-container">
+                    <img src="./assets/email.png" alt="Email Icon" class="icon contact-icon email-icon">
+                    <p><a href="mailto:terryant64@gmail.com"> terryant64@gmail.com </a></p>
+                </div>
+                <div class="contact-info-container">
+                    <img src="./assets/linkedin.png" alt="LinkedIn Icon" class="icon contact-icon">
+                    <p><a href="https://www.linkedin.com/in/anthony-terry-91a560286/"> LinkedIn </a></p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <nav>
+                <div class="nav-links-container">
+                    <ul class="nav-links">
+                        <li><a href="#about"> About </a></li>
+                        <li><a href="#experience"> Experience </a></li>
+                        <li><a href="#projects"> Projects </a></li>
+                        <li><a href="#contact"> Contact </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <p> Copyright &#169; 2024 Anthony Terry. All Rights Reserved. </p>
+        </footer>
+        <script src="app.js"></script>
+    </body>
+</html>
