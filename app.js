@@ -1,8 +1,8 @@
 //-----------------------------//
-// Written By: AJ              //
+// Written By..: AJ            //
 // Date Written: June 23, 2024 //
 // Last Written: July 11, 2024 //
-// Purpose: Portfolio JS       //
+// Purpose.....: Portfolio JS  //
 //-----------------------------//
 
 function toggleMenu()
