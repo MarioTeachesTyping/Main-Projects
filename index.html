@@ -1,0 +1,587 @@
+<!------------------------------------>
+<!--| Written By..: AJ             |-->
+<!--| Date Written: Jun. 23, 2024  |-->
+<!--| Last Written: Oct. 12, 2024  |-->
+<!--| Purpose.....: Portfolio HTML |-->
+<!------------------------------------>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Portfolio </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+    <body>
+        <nav id="desktop-nav">
+            <div class="logo"> Anthony Terry </div>
+            <div> 
+                <ul class="nav-links">
+                    <li><a href="#about"> About </a></li>
+                    <li><a href="#experience"> Skills </a></li>
+                    <li><a href="#projects"> Projects </a></li>
+                    <li><a href="#contact"> Contact </a></li>
+                    <li>
+                        <img
+                            id="modeToggle"
+                            class="icon color-icon" 
+                            src="./assets/theme_light.png" 
+                            src-light="./assets/theme_light.png"
+                            src-dark="./assets/theme_dark.png"
+                            alt="Color Theme Icon"
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="mobile-nav">
+            <div class="logo"> Anthony Terry </div>
+            <div class="mobile-menu">
+                <div class="mobile-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span> <!-- lines of hamburger menu -->
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="#about" onclick="toggleMenu()"> About </a></li>
+                    <li><a href="#experience" onclick="toggleMenu()"> Skills </a></li>
+                    <li><a href="#projects" onclick="toggleMenu()"> Projects </a></li>
+                    <li><a href="#contact" onclick="toggleMenu()"> Contact </a></li>
+                    <li>
+                        <img
+                            id="modeToggle2"
+                            class="icon color-icon" 
+                            src="./assets/theme_light.png" 
+                            src-light="./assets/theme_light.png"
+                            src-dark="./assets/theme_dark.png"
+                            alt="Color Theme Icon"
+                        >
+                    </li>
+                </div>
+            </div>
+        </nav>
+        <section id="profile">
+            <div class="section__pic-container">
+                <img src="./assets/business-pfp.jpeg" alt="Anthony Terry PFP">
+            </div>
+            <div class="section__text">
+                <p class="section__text__p1"> Hello I'm </p>
+                <h1 class="title"> Anthony Terry </h1>
+                <p class="section__text__p2"> Computer Science Major </p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">
+                        Download Resume
+                    </button>
+                    <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                        Contact Info
+                    </button>
+                </div>
+                <div id="socials-container">
+                    <img src="./assets/linkedin_light.png" 
+                    src-light="./assets/linkedin_light.png"
+                    src-dark="./assets/linkedin_dark.png"
+                    alt="My LinkedIn Profile" 
+                    class="icon linkedin-icon" 
+                    onclick="location.href='https://www.linkedin.com/in/anthony-terry-91a560286/'"
+                    >
+                    <img src="./assets/github_light.png" 
+                    src-light="./assets/github_light.png"
+                    src-dark="./assets/github_dark.png"
+                    alt="My GitHub Profile" 
+                    class="icon github-icon" 
+                    onclick="location.href='https://github.com/MarioTeachesTyping'"
+                    >
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <p class="section__text__p1"> Get To Know More </p>
+            <h1 class="title"> About Me </h1>
+            <div class="section-container">
+                <div class="section__pic-container">
+                    <img src="./assets/about-me.jpg" alt="Coding Picture" class="about-pic">
+                </div>
+                
+                <div class="about-details-container">
+                    <div class="about-containers">
+                        <div class="details-container">
+                            <img src="./assets/experience_light.png"
+                            src-light="./assets/experience_light.png"
+                            src-dark="./assets/experience_dark.png" 
+                            alt="Experience Icon" 
+                            class="icon">
+                            <h3> Experience </h3>
+                            <br>
+                            <p> National Society of Black Engineers <br> Data Analytics Assistant <br> Aug. 2024 - Present </p>
+                            <br>
+                            <p> Knight Hacks <br> Workshop Coordinator <br> Aug. 2024 - Present </p>
+                            <br>
+                            <p> ISUE Lab <br> Undergraduate Researcher <br> Aug. 2024 - Present </p>
+                            <br>
+                            <p> Walgreens <br> Customer Service Associate <br> Aug. 2022 - Dec. 2022 </p>
+                        </div>
+                        <div class="details-container">
+                            <img src="./assets/education_light.png"
+                            src-light="./assets/education_light.png" 
+                            src-dark="./assets/education_dark.png"
+                            alt="Education Icon" 
+                            class="icon">
+                            <h3> Education </h3>
+                            <br>
+                            <p> Bachelor of Science in Computer Science 
+                                <br> Minor in Intelligent Robotic Systems 
+                                <br> University of Central Florida <br> May 2026 
+                            </p>
+                            <br>
+                            <p> Associate's of Arts in Computer Science 
+                                <br> Valencia Community College <br> Jul. 2024 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-container">
+                        <p> Hi, my name is Anthony Terry. I'm a Computer Science Major 
+                            at the University of Central Florida, and I look forward to 
+                            challenges that will better myself and help me learn. 
+                            I am thrilled about joining the workforce and looking forward 
+                            to all the knowledge I can obtain in the Computer Science field. </p>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/arrow_light.png" 
+            src-light="./assets/arrow_light.png"
+            src-dark="./assets/arrow_dark.png"
+            alt="Arrow Icon" 
+            class="icon arrow" 
+            onclick="location.href='./#experience'"
+            >
+        </section>
+        <section id="experience">
+            <p class="section__text__p1"> Explore My </p>
+            <h1 class="title"> Technical Skills </h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <h2 class="experience-sub-title"> Languages </h2>
+                        <div class="article-container">
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Java </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Python </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> C/C++ </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> C# </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> HTML </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> CSS </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> JavaScript </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> TypeScript </h3>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="details-container">
+                        <h2 class="experience-sub-title"> Frameworks </h2>
+                        <div class="article-container">
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> React </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Node.js </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Angular </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> MySQL </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> OpenCV </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Flask </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> PyTorch </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> TensorFlow </h3>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="details-container">
+                        <h2 class="experience-sub-title"> Developer Tools </h2>
+                        <div class="article-container">
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Git </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> VS Code </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Visual Studio </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> PyCharm </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> IntelliJ </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Eclipse </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Unity </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Android Studio </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Arduino </h3>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark_light.png" 
+                                src-light="./assets/checkmark_light.png"
+                                src-dark="./assets/checkmark_dark.png"
+                                alt="Experience Icon" 
+                                class="icon"
+                                >
+                                <div>
+                                    <h3> Power BI </h3>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/arrow_light.png" 
+            src-light="./assets/arrow_light.png"
+            src-dark="./assets/arrow_dark.png"
+            alt="Arrow Icon" 
+            class="icon arrow" 
+            onclick="location.href='./#projects'"
+            >
+        </section>
+        <section id="projects">
+            <p class="section__text__p1"> Browse My Main </p>
+            <h1 class="title"> Projects </h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/project-1.JPG" alt="Project 1" class="project-img">
+                        </div>
+                        <h2 class="experience-sub-title project-title"> Modern Technology Website </h2>
+                        <p> Tech Stack: HTML, CSS, JavaScript </p>
+                        <br>
+                        <p> Constructed a technology informative website that is cross-platform compatible with support to portrait and landscape
+                            modes, which enhances usability on multiple devices. 
+                        </p>
+                        <br>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" 
+                            onclick="location.href='https://github.com/MarioTeachesTyping/Main-Projects/tree/TECH-Website'">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/formify.jpg" alt="Project 2" class="project-img">
+                        </div>
+                        <h2 class="experience-sub-title project-title"> Formify </h2>
+                        <p> Tech Stack: Python, OpenCV, Google MediaPipe, Flask, HTML, CSS, C++, Arduino </p>
+                        <br>
+                        <p> Post Physical Rehabilitation at Home. </p>
+                        <p> Formify is a web-accessible program that can monitor a users motion 
+                            in real time and provide haptic feedback to guide them through prescribed 
+                            exercises. </p>
+                        <br>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" 
+                            onclick="location.href='https://devpost.com/software/formify-k8vl4r'">
+                                DevPost
+                            </button>
+                        </div>
+                    </div>
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/project-2.png" alt="Project 3" class="project-img">
+                        </div>
+                        <h2 class="experience-sub-title project-title"> Word Search </h2>
+                        <p> Tech Stack: Java </p>
+                        <br>
+                        <p> Designed a Word Search that randomly generates a unique board
+                            every time the user inputs 10 words. Find some of the words in the image!
+                            (Hint: Mario Characters)
+                        </p>
+                        <br>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" 
+                            onclick="location.href='https://github.com/MarioTeachesTyping/Main-Projects/blob/main/Word%20Search'">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/arrow_light.png" 
+            src-light="./assets/arrow_light.png"
+            src-dark="./assets/arrow_dark.png"
+            alt="Arrow Icon" 
+            class="icon arrow" 
+            onclick="location.href='./#contact'"
+            >
+        </section>
+        <section id="contact">
+            <p class="section__text__p1"> Get in Touch </p>
+            <h1 class="title"> Contact Me </h1>
+            <div class="contact-info-upper-container">
+                <div class="contact-info-container">
+                    <img src="./assets/email_light.png" 
+                    src-light="./assets/email_light.png"
+                    src-dark="./assets/email_dark.png"
+                    alt="Email Icon" 
+                    class="icon contact-icon email-icon"
+                    >
+                    <p><a href="mailto:terryant64@gmail.com"> terryant64@gmail.com </a></p>
+                </div>
+                <div class="contact-info-container">
+                    <img src="./assets/linkedin_light.png" 
+                    src-light="./assets/linkedin_light.png"
+                    src-dark="./assets/linkedin_dark.png"
+                    alt="My LinkedIn Profile" 
+                    class="icon linkedin-icon" 
+                    onclick="location.href='https://www.linkedin.com/in/anthony-terry-91a560286/'"
+                    >
+                    <p><a href="https://www.linkedin.com/in/anthony-terry-91a560286/"> LinkedIn </a></p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <nav>
+                <div class="nav-links-container">
+                    <ul class="nav-links">
+                        <li><a href="#about"> About </a></li>
+                        <li><a href="#experience"> Skills </a></li>
+                        <li><a href="#projects"> Projects </a></li>
+                        <li><a href="#contact"> Contact </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <p> Copyright &#169; 2024 Anthony Terry. All Rights Reserved. </p>
+        </footer>
+        <script src="app.js"></script>
+    </body>
+</html>
