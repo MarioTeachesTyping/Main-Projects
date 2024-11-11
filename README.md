@@ -1,0 +1,1 @@
+https://ajterryportfolio.netlify.app/
