@@ -1,1 +1,3 @@
-https://ajterryportfolio.netlify.app/
+# New Portfolio Website
+
+ajterry.me
